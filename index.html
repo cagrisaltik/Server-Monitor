@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sistem Monitörü</title>
+	
+	<meta http-equiv="refresh" content="5">
+</head>
+<style>
+	body {
+	background-color: #f2f2f2;
+	font-family: Arial, sans-serif;
+	margin: 0;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 50px 0;
+}
+
+.box {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	flex-basis: 300px;
+	margin-bottom: 30px;
+	padding: 20px;
+	text-align: center;
+}
+
+.progress-bar {
+	background-color: #ccc;
+	border-radius: 5px;
+	height: 20px;
+	margin: 10px 0;
+	overflow: hidden;
+}
+
+.progress {
+	background-color: #4caf50;
+	height: 100%;
+	transition: width 0.5s ease-in-out;
+}
+
+.alert {
+	background-color: #ff9800;
+	color: #fff;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 20px;
+	text-align: center;
+}
+
+.alert.hidden {
+	display: none;
+}
+
+</style>
+<body>
+	<h1>Sistem Monitörü</h1>
+	<div class="container">
+		<div class="box">
+			<h2>CPU Kullanımı</h2>
+			
+			<p id="memory-usage">{{ cpu_percent}}%</p>
+		</div>
+		<div class="box">
+			<h2>Bellek Kullanımı</h2>
+			
+			<p id="cpu-usage">{{ memory_percent}}%</p>
+		</div>
+		<div class="box">
+			<h2>Disk Kullanımı</h2>
+			
+			<p id="disk-usage">{{ disk_percent}}%</p>
+		</div>
+		<div class="box">
+			<h2>Kullanılan Disk Boyutu</h2>
+			
+			<p id="disk-usage">{{ disk_used}}GB</p>
+		</div>
+		<div class="box">
+			<h2>Boş Disk Boyutu</h2>
+			
+			<p id="disk-usage">{{ disk_free}}GB</p>
+		</div>
+		<div class="box">
+			<h2>Ağ Bağlantıları</h2>
+			<p id="network-status"></p>
+			<div class="box">
+				<h2>Network Input</h2>
+				<p id="network-status">{{giris}}Kbps</p>
+			</div>
+			<div class="box">
+				<h2>Network Output</h2>
+				<p id="network-status">{{cikis}}Kbps</p>
+			</div>
+		</div>
+	</div>
+	
+	
+</body>
+</html>
